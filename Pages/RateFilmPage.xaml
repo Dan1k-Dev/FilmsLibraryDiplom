@@ -1,0 +1,33 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.RateFilmPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages"
+        mc:Ignorable="d"
+        Title="Оценка" Height="200" Width="250" MaxHeight="200"
+        MaxWidth="250" Icon="/Resources/Logo.ico" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF110203">
+
+        <Label x:Name="Filmidd" Visibility="Hidden" Height="1"/>
+        <TextBlock Style="{DynamicResource text}" VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Text="" FontSize="60"
+                   Margin="0 -55 0 0" x:Name="RateDigital"/>
+        <Button Style="{DynamicResource mainbutton}"
+                Height="70" Width="60" Margin="140 -50 0 0"
+                x:Name="RateUpBtn" Click="RateUpBtn_Click">
+            <TextBlock Text=">" FontSize="50" Margin="-0 -20 0 0"/>
+        </Button>
+        <Button Style="{DynamicResource mainbutton}"
+                Height="70" Width="60" Margin="-140 -50 0 0"
+                x:Name="RateDownBtn" Click="RateDownBtn_Click">
+            <TextBlock Text="&lt;" FontSize="50" Margin="-5 -20 0 0"/>
+        </Button>
+
+        <Button Style="{DynamicResource mainbutton}" Content="Принять"
+                VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                Margin="0 0 0 15" Width="100" Height="50"
+                x:Name="OkBtn" Click="OkBtn_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,110 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.EditFilmPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+         Title="Редактирование фильма" Height="790" Width="800"
+        WindowStartupLocation="CenterScreen" MaxHeight="790"
+        MaxWidth="800" ResizeMode="NoResize" Icon="/Resources/Logo.ico">
+    <Grid Background="#FF110203">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <Button Style="{DynamicResource mainbutton}" Content="Выбрать фото..."
+                FontSize="20" Width="200" Height="70" VerticalAlignment="Top"
+                HorizontalAlignment="Left" Margin="20 20 0 0"
+                x:Name="ImgDialog" Click="ImgDialog_Click"/>
+
+            <Image x:Name="phto" Height="400" Width="300" VerticalAlignment="Bottom"
+               HorizontalAlignment="Left" Margin="30 20 0 0"/>
+
+            <Label Content="" Visibility="Hidden" x:Name="bytesPict"
+                   Foreground="White"/>
+
+            <Label x:Name="asdd" Foreground="White" Visibility="Hidden"/>
+            <Button Content="Выйти" Style="{DynamicResource mainbutton}"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                    Margin="20 140 0 0" x:Name="ExitPage" Click="ExitPage_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+
+            <Label Content="Жанр фильма:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <ComboBox Style="{DynamicResource ComboboxStyle}"
+                          Margin="10 10 10 0" Height="30" x:Name="GanreCb"/>
+
+            <Label Content="Дата выпуска фильма:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <Border BorderBrush="White" BorderThickness="1" 
+                    CornerRadius="5" Margin="10 10 10 0" Height="30">
+                <xctk:MaskedTextBox Style="{DynamicResource txtBox}"
+                                    Mask="##/##/####"
+                                    x:Name="DateTb" CaretBrush="White"
+                         PreviewMouseDown="DateTb_PreviewMouseDown"/>
+            </Border>
+
+            <Label Content="Режиссер фильма:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <Border BorderBrush="White" BorderThickness="1" 
+                    CornerRadius="5" Margin="10 10 10 0" Height="30">
+                <TextBox Style="{DynamicResource txtBox}"
+                         x:Name="DirectorTb"
+                         PreviewMouseDown="DirectorTb_PreviewMouseDown"
+                         CaretBrush="White"/>
+            </Border>
+
+            <Label Content="Страна фильма:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <ComboBox Style="{DynamicResource ComboboxStyle}"
+                          Margin="10 10 10 0" Height="30"
+                      x:Name="CountryCb"/>
+
+            <Label Content="Категория фильма:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <ComboBox Style="{DynamicResource ComboboxStyle}"
+                          Margin="10 10 10 0" Height="30"
+                      x:Name="CategoryCb"/>
+
+            <Label Content="Возрастное ограничение фильма:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <ComboBox Style="{DynamicResource ComboboxStyle}"
+                          Margin="10 10 10 0" Height="30"
+                      x:Name="AgeLimitCb">
+                <ComboBoxItem Content="0+"/>
+                <ComboBoxItem Content="6+"/>
+                <ComboBoxItem Content="12+"/>
+                <ComboBoxItem Content="16+"/>
+                <ComboBoxItem Content="18+"/>
+            </ComboBox>
+
+            <Label Content="Метраж фильма:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <ComboBox Style="{DynamicResource ComboboxStyle}"
+                          Margin="10 10 10 0" Height="30"
+                      x:Name="MetrageCb"/>
+
+            <Label Content="Ссылка на фильм:" Foreground="White"
+                   FontSize="16" Margin="10 10 0 0"/>
+            <Border BorderBrush="White" BorderThickness="1" 
+                    CornerRadius="5" Margin="10 10 10 0" Height="30">
+                <TextBox Style="{DynamicResource txtBox}"
+                         x:Name="SiteTb"
+                         PreviewMouseDown="SiteTb_PreviewMouseDown"
+                         CaretBrush="White"/>
+            </Border>
+
+            <Button x:Name="EditBtn" Click="EditBtn_Click"
+                    Style="{DynamicResource mainbutton}" 
+                    Content="Сохранить"/>
+            
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="Frolov_Cinema.WaitServerResponse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema"
+        mc:Ignorable="d"
+        Title="Системное сообщение" Height="100" Width="300" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <TextBlock Text="Ожидание отклика сервера" VerticalAlignment="Top"
+                   HorizontalAlignment="Center" Margin="0 25 0 0"
+                   FontSize="15"/>
+        <ProgressBar x:Name="ProgBar" Height="20" Margin="40 25 40 0"/>
+        <Label Content="" Visibility="Hidden" x:Name="ParamAccess"/>
+    </Grid>
+</Window>

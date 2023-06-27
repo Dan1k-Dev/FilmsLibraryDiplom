@@ -1,0 +1,29 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.LooksCommentsPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages"
+        mc:Ignorable="d"
+        Title="Комментарии" Height="650" Width="1000"
+        WindowStartupLocation="CenterScreen" MaxHeight="650"
+        MaxWidth="1000" ResizeMode="NoResize" Icon="/Resources/Logo.ico">
+    <Grid Background="#FF110203">
+
+        <TextBlock x:Name="Film" Visibility="Visible" Foreground="White"/>
+        
+        <ListBox Foreground="White" FontSize="25" Background="Transparent"
+                     FontFamily="Arial" FontWeight="DemiBold" x:Name="CommsSlb"
+                     ItemsSource="{Binding}" 
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     Margin="20" Height="580">
+            <Grid>
+                <TextBlock x:Name="Comms" TextWrapping="Wrap"
+                               Text="{Binding ElementName=Comms,
+                    Path=Text}"/>
+            </Grid>
+        </ListBox>
+
+    </Grid>
+</Window>

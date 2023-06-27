@@ -1,0 +1,89 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.RegistrationPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="800" Width="450" Icon="/Resources/Logo.ico"
+        MaxWidth="450" MaxHeight="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF110203">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Image Source="/Resources/Logo.png" Height="80"
+                   Margin="10" Width="80"/>
+            <Button Style="{DynamicResource mainbutton}" x:Name="btnGoBack"
+                    Click="btnGoBack_Click" Content="Назад"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Margin="10 -70 0 0" Width="110"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Label Content="Логин:" Style="{DynamicResource txtBox}"
+                   FontSize="17" Margin="40 40 0 0"/>
+            <Border BorderBrush="White" CornerRadius="5" BorderThickness="1"
+                    Margin="40 0 40 0">
+                <TextBox x:Name="Login" Text="Придумайте логин" PreviewMouseDown="Login_PreviewMouseDown"
+                     Style="{DynamicResource txtBox}" Height="25" FontSize="18"
+                         CaretBrush="White"/>
+            </Border>
+            <Label Content="Имя:" Style="{DynamicResource txtBox}"
+                   FontSize="17" Margin="40 20 0 0"/>
+            <Border BorderBrush="White" CornerRadius="5" BorderThickness="1"
+                    Margin="40 0 40 0">
+                <TextBox x:Name="Name" Text="Введите свое имя" PreviewMouseDown="Name_PreviewMouseDown"
+                     Style="{DynamicResource txtBox}" Height="25" 
+                         CaretBrush="White" FontSize="18"/>
+            </Border>
+            <Label Content="Фамилия:" Style="{DynamicResource txtBox}"
+                   FontSize="17" Margin="40 20 0 0"/>
+            <Border BorderBrush="White" CornerRadius="5" BorderThickness="1"
+                    Margin="40 0 40 0">
+                <TextBox x:Name="SecName" Text="Введите свою фамилию" PreviewMouseDown="SecName_PreviewMouseDown"
+                     Style="{DynamicResource txtBox}" 
+                         CaretBrush="White" Height="25" FontSize="18"/>
+            </Border>
+
+            <Label Content="Дата рождения:" Style="{DynamicResource txtBox}"
+                   FontSize="17" Margin="40 20 0 0"/>
+            <Border BorderBrush="White" CornerRadius="5" BorderThickness="1"
+                    Margin="40 0 40 0">
+                <xctk:MaskedTextBox Mask="##/##/####" Style="{DynamicResource txtBox}"
+                                    PreviewMouseDown="DatebTb_PreviewMouseDown" x:Name="DatebTb"
+                                    FontSize="17" Margin="0 0 0 0" CaretBrush="White"/>
+            </Border>
+            
+
+            <Label Content="Электронная почта:" Style="{DynamicResource txtBox}"
+                   FontSize="17" Margin="40 20 0 0"/>
+            <Border BorderBrush="White" CornerRadius="5" BorderThickness="1"
+                    Margin="40 0 40 0">
+                <TextBox x:Name="Email" Text="Введите свой адрес почты" PreviewMouseDown="Email_PreviewMouseDown"
+                     Style="{DynamicResource txtBox}" 
+                         CaretBrush="White" Height="25" FontSize="18"/>
+            </Border>
+            <Label Content="Придумайте пароль:" Style="{DynamicResource txtBox}"
+                   FontSize="17" Margin="40 20 0 0"/>
+            <Border BorderBrush="White" CornerRadius="5" BorderThickness="1"
+                    Margin="40 0 40 0">
+                <PasswordBox x:Name="Password" Password="Пароль" PreviewMouseDown="Password_PreviewMouseDown"
+                     Style="{DynamicResource txtBox}" 
+                             CaretBrush="White" Height="25" FontSize="18"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Button x:Name="BtnReg" Click="BtnReg_Click"
+                    Content="Регистрация" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Style="{DynamicResource mainbutton}"
+                    Margin="15" Height="50" Width="140"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

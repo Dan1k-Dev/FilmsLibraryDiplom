@@ -1,0 +1,106 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.OperationFilmsAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages"
+        mc:Ignorable="d"
+        Title="Управление" Height="800" Width="900"
+        Icon="/Resources/Logo.ico" WindowStartupLocation="CenterScreen"
+        MaxHeight="800" MaxWidth="900">
+    <Grid Background="#FF110203">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2.8*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="410*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.RowSpan="4"
+                    Grid.Column="0">
+            <TextBlock Text="Kinolenta" Style="{DynamicResource text}"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Margin="0 20 0 0" FontSize="32"/>
+            <Button Content="Фильмотека" x:Name="Filmotech"
+                    Click="Filmotech_Click"  Style="{DynamicResource mainbutton}"
+                    Margin="0 20 0 0" FontSize="16"/>
+            <Button Content="Личный кабинет" x:Name="UserCabinet"
+                    Click="UserCabinet_Click"  Style="{DynamicResource mainbutton}"
+                    Margin="0 20 0 0" FontSize="16"/>
+            <Button Content="Управление" x:Name="Manage"
+                    Click="Manage_Click"  Style="{DynamicResource mainbutton}"
+                    Margin="0 20 0 0" FontSize="16"/>
+            <Button Content="История" Style="{DynamicResource mainbutton}"
+                    Margin="0 20 0 0" FontSize="16" x:Name="History"
+                    Click="History_Click"/>
+            <Button Content="Оставить отзыв" Style="{DynamicResource mainbutton}"
+                    Margin="0 20 0 0" FontSize="16" x:Name="Review"
+                    Click="Review_Click"/>
+            <Label x:Name="ParamAccess" Content="" Visibility="Hidden"/>
+            <Button x:Name="ExitBtn"
+                    Click="ExitBtn_Click" Content="Выход" Style="{DynamicResource exitRed}"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                    Margin="0 0 0 0" Width="200" FontSize="16">
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+            <Border BorderBrush="White" BorderThickness="1" 
+                    CornerRadius="5" Margin="10">
+                <TextBox x:Name="SearchBar" Text=""
+                     Style="{DynamicResource txtBox}" PreviewMouseDown="SearchBar_PreviewMouseDown"
+                         TextChanged="SearchBar_TextChanged" Height="30"
+                         Width="530" FontSize="20" CaretBrush="White"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Категории:" Style="{DynamicResource text}"
+                       FontSize="17" Margin="20 -50 0 0"/>
+            <ComboBox x:Name="CatgCb" Style="{DynamicResource ComboboxStyle}"
+                      Width="200" Margin="10 -40 0 5" Height="40"
+                      SelectionChanged="CatgCb_SelectionChanged"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical"
+                    Width="640">
+            <ListBox Foreground="White" FontSize="25" Background="Transparent"
+                     FontFamily="Arial" FontWeight="DemiBold" x:Name="FilmsLB"
+                     MouseDoubleClick="FilmsLB_MouseDoubleClick"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     Margin="10" Height="490">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Image x:Name="FilmsImg" Height="150"
+                                   Width="150" Source="{Binding Path=Imagge}"
+                                   HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="FilmsN" TextWrapping="Wrap"
+                               Text="{Binding Path = Name}" Foreground="White"
+                                       HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+            <Button Style="{DynamicResource mainbutton}"
+                    Content="Удалить" HorizontalAlignment="Right"
+                    Margin="130 10 0 10" x:Name="DelFilm"
+                    Click="DelFilm_Click"/>
+            <Button Style="{DynamicResource mainbutton}"
+                    Content="Добавить" HorizontalAlignment="Right"
+                    Margin="20 10 0 10" x:Name="AddFilm" Click="AddFilm_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

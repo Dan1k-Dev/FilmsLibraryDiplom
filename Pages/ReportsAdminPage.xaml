@@ -1,0 +1,70 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.ReportsAdminPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages"
+        mc:Ignorable="d"
+        Title="Отчеты" Height="470" Width="800" MaxHeight="470"
+        MaxWidth="800"
+        Icon="/Resources/Logo.ico" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF110203">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.RowSpan="2" Orientation="Vertical">
+            <TextBlock Style="{DynamicResource text}" Text="Категории:"
+                       Margin="13 10 0 0" FontSize="20"/>
+            <ComboBox x:Name="CatgCb" SelectionChanged="CatgCb_SelectionChanged"
+                      Style="{DynamicResource ComboboxStyle}"
+                      Height="30" Margin="10 5 10 0"/>
+            <!--<TextBlock Style="{DynamicResource text}" Text="Метражи:"
+                       Margin="13 10 0 0" FontSize="20"/>
+            <ComboBox x:Name="MetrageCb" SelectionChanged="MetrageCb_SelectionChanged"
+                      Style="{DynamicResource ComboboxStyle}"
+                      Height="30" Margin="10 5 10 0"/>-->
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <DataGrid AutoGenerateColumns="False" x:Name="DataReps"
+                      Margin="10" Height="350" HorizontalScrollBarVisibility="Visible">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название"
+                                        Binding="{Binding FilmName}"/>
+                    <DataGridTextColumn Header="Жанр"
+                                        Binding="{Binding Ganree}"/>
+                    <DataGridTextColumn Header="Дата выхода"
+                                        Binding="{Binding DateStart}"/>
+                    <DataGridTextColumn Header="Режиссер"
+                                         Binding="{Binding Director}"/>
+                    <DataGridTextColumn Header="Страна"
+                                         Binding="{Binding CountryID}"/>
+                    <DataGridTextColumn Header="Категория"
+                                         Binding="{Binding CategoryID}"/>
+                    <DataGridTextColumn Header="Рейтинг"
+                                         Binding="{Binding Rating}"/>
+                    <DataGridTextColumn Header="Возрастное ограничение"
+                                         Binding="{Binding AgeLimit}"/>
+                    <DataGridTextColumn Header="Метраж"
+                                         Binding="{Binding MetrageID}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button Style="{DynamicResource mainbutton}"
+                    Content="Печать" VerticalAlignment="Center"
+                    HorizontalAlignment="Right" Margin="0 10 20 0"
+                    FontSize="17" x:Name="PrintRep" Click="PrintRep_Click"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

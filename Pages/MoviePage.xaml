@@ -1,0 +1,77 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.MoviePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages"
+        mc:Ignorable="d"
+        Title="" Height="650" Width="800"
+        MaxHeight="650" MaxWidth="800"
+        Icon="/Resources/Logo.ico" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF110203">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="530"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <Image x:Name="ImgFilm" Margin="10" Height="400"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock x:Name="NameFilm" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+            <TextBlock x:Name="Ganree" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+            <TextBlock x:Name="DateS" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+            <TextBlock x:Name="Director" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+            <TextBlock x:Name="Countryy" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+            <TextBlock x:Name="Catg" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+            <TextBlock x:Name="Rate" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 320 0"
+                       TextWrapping="Wrap"/>
+            <Button x:Name="RateFilm" Style="{DynamicResource mainbutton}"
+                    HorizontalAlignment="Right" Margin="0 -45 200 0"
+                    Content="Оценить" FontSize="18" Width="110"
+                    Click="RateFilm_Click"/>
+            <TextBlock x:Name="Age" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+            <TextBlock x:Name="Metrage" Text=""
+                       Style="{DynamicResource text}" Margin="10 10 0 0"
+                       TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Button Content="Смотреть" Style="{DynamicResource mainbutton}"
+                    FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Margin="0 20 0 0" x:Name="LookBtn" Click="LookBtn_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button x:Name="Comm" Content="+Комментарий" Style="{DynamicResource mainbutton}"
+                    VerticalAlignment="Center" HorizontalAlignment="Right"
+                    Margin="0 20 10 0" FontSize="20" Click="Comm_Click"/>
+            <Button x:Name="CommsLook" Content="Комментарии" Style="{DynamicResource mainbutton}"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Margin="10 -60 0 0" FontSize="20" Click="CommsLook_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

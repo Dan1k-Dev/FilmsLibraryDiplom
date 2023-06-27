@@ -1,0 +1,49 @@
+﻿<Window x:Class="Frolov_Cinema.Pages.EditProfilePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Frolov_Cinema.Pages"
+        mc:Ignorable="d"
+        Title="Редактирование" Height="350" Width="400" MaxHeight="350"
+        MaxWidth="400" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" Icon="/Resources/Logo.ico">
+    <Grid Background="#FF110203">
+
+        <Button Style="{DynamicResource mainbutton}" Content="←"
+                Width="50" Height="50" VerticalAlignment="Top"
+                HorizontalAlignment="Left" Margin="10 5 0 0"
+                x:Name="BackBtn" Click="BackBtn_Click"/>
+
+        <StackPanel Grid.Row="1" Margin="0 30 0 0">
+            <Border BorderThickness="1" BorderBrush="White" Margin="50 60 50 7"
+                    CornerRadius="5">
+                <TextBox x:Name="Nickname" Style="{DynamicResource txtBox}"
+                     CaretBrush="White" Text="Логин" Margin="9,2,3,1" FontSize="18"
+                         PreviewMouseDown="Nickname_PreviewMouseDown">
+                </TextBox>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="White" Margin="50 20 50 7"
+                    CornerRadius="5">
+                <TextBox x:Name="Email" Style="{DynamicResource txtBox}"
+                     CaretBrush="White" Text="Почта" Margin="6 2 6 1" FontSize="18"
+                         PreviewMouseDown="Email_PreviewMouseDown">
+                </TextBox>
+            </Border>
+            <Border BorderThickness="1" BorderBrush="White" Margin="50 20 50 7"
+                    CornerRadius="5">
+                <TextBox x:Name="Password" Style="{DynamicResource txtBox}"
+                     CaretBrush="White" Text="Пароль" Margin="6 2 6 1" FontSize="18"
+                         PreviewMouseDown="Password_PreviewMouseDown">
+                </TextBox>
+            </Border>
+            <Button x:Name="Okay" Style="{DynamicResource regGreen}" Content="Принять"
+                    FontSize="18" FontFamily="Bahnscrift" VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center" Width="100" Click="Okay_Click"
+                    Margin="0 20 0 0">
+            </Button>
+            <Label x:Name="ParamAccess" Content="" Visibility="Hidden"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
